@@ -1,5 +1,16 @@
-/target
-.fuzzy/
-fuzzy-runs/
+# Rust build output
+/target/
+
+# Local fuzzy runtime state
+/.fuzzy/
+/fuzzy-runs/
+
+# Logs and local environment
 *.log
+.env
+.env.*
+
+# OS/editor noise
 .DS_Store
+.idea/
+.vscode/
