@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fuzzy Run",
+  "type": "object",
+  "required": ["schema_version", "id", "title", "mode", "status", "request", "policies", "outputs"],
+  "properties": {
+    "schema_version": { "const": "fuzzy.run.v1" },
+    "id": { "type": "string", "pattern": "^FUZ-" },
+    "title": { "type": "string" },
+    "mode": { "enum": ["investigate", "troubleshoot", "debug", "research", "triage", "design", "audit", "incident", "experiment", "scope", "deliver"] },
+    "status": { "enum": ["active", "blocked", "completed", "abandoned"] },
+    "request": { "type": "object" },
+    "policies": { "type": "object" },
+    "outputs": { "type": "object" }
+  }
+}

@@ -1,0 +1,23 @@
+[package]
+name = "fuzzy"
+version = "0.1.0"
+edition = "2021"
+description = "CLI-first harness for uncertain work: investigation, troubleshooting, design, and handoff."
+license = "MIT"
+repository = "https://example.invalid/fuzzy-harness"
+
+[dependencies]
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4.5", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+toml = "0.8"
+ureq = { version = "2", features = ["json"] }
+uuid = { version = "1.8", features = ["v4", "serde"] }
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.10"

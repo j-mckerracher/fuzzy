@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hypothesis Ledger",
+  "type": "object",
+  "required": ["schema_version", "hypotheses"],
+  "properties": {
+    "schema_version": { "const": "fuzzy.hypotheses.v1" },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "status", "confidence"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^H-[0-9]{3}$" },
+          "claim": { "type": "string" },
+          "status": { "enum": ["open", "likely", "confirmed", "rejected", "superseded"] },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    }
+  }
+}

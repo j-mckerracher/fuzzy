@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fuzzy Handoff",
+  "type": "object",
+  "required": ["schema_version", "run_id", "exit_type", "status", "artifacts"],
+  "properties": {
+    "schema_version": { "const": "fuzzy.handoff.v1" },
+    "run_id": { "type": "string", "pattern": "^FUZ-" },
+    "exit_type": { "enum": ["investigation-report", "diagnosis", "decision", "escalation", "experiment-result", "runbook-update", "delivery-story", "abandon"] },
+    "status": { "type": "string" },
+    "artifacts": { "type": "array", "items": { "type": "string" } }
+  }
+}

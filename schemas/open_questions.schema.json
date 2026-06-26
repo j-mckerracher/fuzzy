@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Questions",
+  "type": "object",
+  "required": ["schema_version", "questions"],
+  "properties": {
+    "schema_version": { "const": "fuzzy.open_questions.v1" },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "question", "blocking", "status"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^Q-[0-9]{3}$" },
+          "question": { "type": "string" },
+          "blocking": { "type": "boolean" },
+          "status": { "enum": ["open", "resolved", "deferred", "superseded"] }
+        }
+      }
+    }
+  }
+}
